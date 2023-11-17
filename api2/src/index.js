@@ -7,11 +7,15 @@ const typeDefs = require("./schema");
 const resolvers = require("./resolvers");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const helmet = require("helmet");
+const cors = require("cors");
 const port = process.env.PORT;
 const DB_HOST = process.env.DB_HOST;
 db.connect(DB_HOST);
 
 const app = express();
+app.use(helmet());
+app.use(cors());
 const server = new ApolloServer({
   typeDefs,
   resolvers,
