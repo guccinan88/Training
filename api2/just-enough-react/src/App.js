@@ -1,17 +1,13 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Sparkle from "./Sparkle";
+import React from "react";
+import ReactDOM from "react-dom";
+import Pages from "./pages";
 
-function App() {
-  const name = "nan";
-  const now = new Date().toLocaleDateString();
+const App = () => {
   return (
-    <div className="App">
-      <p>Hello World:{name}</p>
-      <p>Time:{now}</p>
-      <Sparkle />
-    </div>
+    <>
+      <Pages />
+    </>
   );
-}
+};
 
 export default App;
